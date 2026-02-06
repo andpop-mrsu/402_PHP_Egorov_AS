@@ -1,0 +1,26 @@
+{
+    "name": "egorovas/progression",
+    "description": "CLI game: arithmetic progression",
+    "type": "project",
+    "require": {
+        "php": ">=8.1",
+        "wp-cli/php-cli-tools": "^0.12.0"
+    },
+    "authors": [
+        {
+            "name": "Anton Egorov"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/Controller.php",
+            "src/View.php"
+        ]
+    },
+    "bin": [
+        "bin/progression"
+    ],
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^4.0"
+    }
+}

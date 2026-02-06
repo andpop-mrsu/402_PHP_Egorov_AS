@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+$autoloadPaths = [
+    __DIR__ . '/../vendor/autoload.php',
+    __DIR__ . '/../../../autoload.php',
+];
+
+foreach ($autoloadPaths as $autoloadPath) {
+    if (file_exists($autoloadPath)) {
+        require $autoloadPath;
+        break;
+    }
+}
+
+if (!function_exists('EgorovAS\\Progression\\Controller\\startGame')) {
+    fwrite(STDERR, "Autoload not found. Install dependencies with Composer.\n");
+    exit(1);
+}
+
+use function EgorovAS\Progression\Controller\startGame;
+
+startGame();
